@@ -191,8 +191,6 @@ class TimeParser(object):
         # цепляем часовой пояс
         if result_datetime is not None:
             result_datetime = change_timezone(result_datetime, self.tz)
-        if result_date is not None:
-            result_date = change_timezone(result_date, self.tz)
         if result_time is not None:
             result_time = change_timezone(result_time, self.tz)
 
