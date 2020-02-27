@@ -88,7 +88,9 @@ def weekday(nodes, now):
     cat = 'datetime' if isinstance(dt, datetime) else 'date'
 
     dt_wday = datetime.weekday(dt)
-    if (offset and offset == 1):
+    if (offset and offset == 2):
+        days = 14 - (dt_wday - wday) % 7
+    elif (offset and offset == 1):
         days = 7 - (dt_wday - wday) % 7
     elif cat == 'date' and dt != now.date():
         days = 7 - (dt_wday - wday) % 7
